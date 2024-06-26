@@ -26,6 +26,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+#bounce :hover {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
