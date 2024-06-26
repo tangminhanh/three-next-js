@@ -25,6 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
 @font-face {
   font-family: 'Tiny5';
   src: url('./ui/tiny5.ttf') format('truetype');
