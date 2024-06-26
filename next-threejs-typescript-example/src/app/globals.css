@@ -25,7 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+@font-face {
+  font-family: 'Tiny5';
+  src: url('./ui/tiny5.ttf') format('truetype');
+  font-weight: bold;
+  /* font-style: normal; */
+}
 
+.custom-font {
+  font-family: 'Tiny5', sans-serif;
+}
 #bounce :hover {
   animation-name: bounce;
   animation-timing-function: ease;
