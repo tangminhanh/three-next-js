@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Suspense fallback={<PageSkeleton />}>
+    // <Suspense fallback={<PageSkeleton />}>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <TypingEffect />
@@ -79,7 +79,7 @@ export default function Home() {
               className="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 text-white text-2xl"
               onClick={togglePlay}
             >
-              Play
+              
             </button>
           )}
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
                 className="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 text-white text-2xl"
                 onClick={togglePlay}
             >
-                Play
+                
             </button>
             )}
         </div> 
@@ -122,16 +122,19 @@ export default function Home() {
               className="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 text-white text-2xl"
               onClick={togglePlay}
             >
-              Play
+              
             </button>
           )}
         </div>
       </div>
     <div className= " pt-5 grid text-center lg:mb-0 lg:w-full lg:text-center transition-colors">
-            <h1 className="group text-2xl grid text-center pt-8 font-semibold">
-                Final Year Student @NTU, Singapore. 
-            </h1>
+            
+             {/* <div className="max-w-3xl mx-auto target target-show"> */}
+              <p className="mt-6 text-center max-w-3xl mx-auto leading-8 text-gray-400">Crafting beautiful and functional web applications is my passion. As a full-stack developer, I bring together my skills in front-end and back-end development to create seamless user experiences.</p>
+              {/* </div> */}
     </div>
+   
+
       <div className=" grid jump text-center lg:mb-0 lg:w-full lg:max-w-sm lg:text-center">
         <a
   href="/about-me/edu"
@@ -142,8 +145,8 @@ export default function Home() {
       <Image
               src="/hand.png"
               alt="Vercel Logo"
-              className="dark:invert"
-              width={50}
+              className="dark:invert "
+              width={60}
               height={12}
               priority
             />
@@ -175,7 +178,7 @@ export default function Home() {
 
 
     </main>
-    </Suspense>
+    // </Suspense>
     // </SwipeableContainer>
   );
 }

@@ -36,13 +36,19 @@ export function Card({
 
   return (
     <div className="group rounded-lg border border-transparent p-2 shadow-sm transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30">
-      <div className="flex p-3 dark:drop-shadow-[0_0_0.8rem_#ffffff70]">
-        {Icon ? <Icon className="h-5 w-5 text-green-400" /> : null}
-        <h3 className="font-semibold ml-2 text-sm text-green-500 font-medium">{title}</h3>
+  <div className="flex p-3 dark:drop-shadow-[0_0_0.8rem_#ffffff70] items-center">
+    {Icon ? (
+      <div className="flex items-center justify-center h-5 w-5 rounded-md bg-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        <Icon className="h-5 w-5 text-indigo-400 hover:text-purple-500" />
       </div>
-      <p className="custom-font truncate text-gray-500 rounded-xl bg-gray-200 px-2 py-4 text-center text-2xl">
-        {value}
-      </p>
-    </div>
+    ) : null}
+    <h3 className="font-semibold ml-2 text-sm bg-gradient-to-r bg-clip-text text-transparent from-pink-400 via-purple-500 to-indigo-500 animate-text">
+      {title}
+    </h3>
+  </div>
+  <p className="custom-font truncate rounded-xl px-2 py-4 text-center text-2xl transition-all hover:text-black hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-indigo-500">
+    {value}
+  </p>
+</div>
   );
 }

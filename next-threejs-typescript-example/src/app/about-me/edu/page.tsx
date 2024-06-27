@@ -28,10 +28,9 @@ const videoRef = useRef<HTMLVideoElement>(null);
   }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <h1 className={"custom-font mb-4 text-xl md:text-2xl"}>
-        About me 
-      </h1>
-      <div className="" id="bounce">
+        <div className="flex flex-col items-center">
+        <h1 className="custom-font mb-2 text-xl md:text-2xl">About Me</h1>
+        <div className="relative mb-4">
           <video
             ref={videoRef}
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent"
@@ -52,10 +51,14 @@ const videoRef = useRef<HTMLVideoElement>(null);
             </button>
           )}
         </div>
-      <div className="grid gap-3 sm:grid-cols-2 py-5 lg:grid-cols-3">
-          <CardAboutMe />
+        <h2 className="text-2xl font-semibold">Final Year Student @NTU, Singapore</h2>
+      
+      <div className="grid gap-3 sm:grid-cols-2 pt-4 lg:grid-cols-3">
+        <CardAboutMe />
       </div>
-      <div className="mx-auto mt-8 max-w-2xl px-6 lg:px-8 target target-show">
+      </div>
+      
+      <div className="mx-auto max-w-2xl px-6 lg:px-8">
             <h3 className="text-center text-sm pt-4 font-semibold leading-8 text-gray-500 uppercase">Works with different technologies</h3>
             <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-7">
           <img
@@ -114,7 +117,8 @@ const videoRef = useRef<HTMLVideoElement>(null);
                 src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682841142/image_4_vyfc0e.png" 
                 alt="NuxtJs" width="158" height="48"/>
             <img className="max-h-12 w-full object-contain col-span-1" src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682841744/image_10_zfv0fz.png" alt="NodeJs" width="158" height="48"/>
-            <img className="max-h-12 w-full object-contain col-span-1" src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682840370/image_zdf6lo.png" alt="Laravel" width="158" height="48"/>
+            <Image className="max-h-12 w-full object-contain col-span-1" 
+            src="/aws.png" alt="AWS" width="158" height="48"/>
             <img className="max-h-12 w-full object-contain col-span-1" src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682843277/image_15_1_mxtpes.png" alt=".NET Core" width="158" height="48"/>
             <img className="max-h-12 w-full object-contain col-span-1" src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682843518/mysql-logo-png-transparent_1_uvb3gb.png" alt="MySQL" width="158" height="48"/>
             <img className="max-h-12 w-full object-contain col-span-1" src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682844385/microsoft-sql-server-logo-svgrepo-com_2_mtucyf.png" alt="MsSQL" width="158" height="48"/>
@@ -127,23 +131,3 @@ const videoRef = useRef<HTMLVideoElement>(null);
 }
 
 
-
-//   <div className=" grid jump text-center lg:mb-4 lg:w-full lg:max-w-sm lg:text-center">
-        
-//         <a
-//           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-//           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <h2 className="mb-3 text-2xl font-semibold">
-//            {" "}
-//             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-//               -&gt;
-//             </span>
-//           </h2>
-//           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-//             Find in-depth information about Next.js features and API.
-//           </p>
-//         </a>
-//         </div>
