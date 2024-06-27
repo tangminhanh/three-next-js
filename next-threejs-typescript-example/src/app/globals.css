@@ -24,6 +24,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 @font-face {
@@ -41,8 +43,31 @@ body {
   animation-timing-function: ease;
 }
 
+.scroller {
+  height: 300px;
+
+}
+
+.scroller section {
+  scroll-snap-align: start;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.swipe-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
 }

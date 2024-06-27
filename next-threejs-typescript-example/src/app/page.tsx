@@ -3,10 +3,8 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from 'react';
 import TypingEffect from './typing';
 import { tiny5 } from './ui/fonts';
-
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [hoveredElement, setHoveredElement] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
@@ -31,6 +29,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <TypingEffect />
 
@@ -42,7 +41,10 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           > View
-            My Resume{" "}
+            My Resume{" "} 
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
             <Image
               src="/resume.png"
               alt="Vercel Logo"
@@ -125,7 +127,7 @@ export default function Home() {
 
       </div>
 
-      <div className=" grid text-center lg:mb-0 lg:w-full lg:max-w-sm lg:text-center">
+      <div className=" grid jump text-center lg:mb-0 lg:w-full lg:max-w-sm lg:text-center">
         {/* <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -146,14 +148,21 @@ export default function Home() {
       
         <a
   href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 jump"
+  className="group rounded-lg border border-transparent px-5 py-4 transition-colors jump"
   target="_blank"
   rel="noopener noreferrer"
 >
   <h2 className="mb-3 text-2xl font-semibold">
     Swipe to know About Me{" "}
-    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-      
+    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none jump">
+      <Image
+              src="/hand.png"
+              alt="Vercel Logo"
+              className="dark:invert"
+              width={100}
+              height={24}
+              priority
+            />
     </span>
   </h2>
   {/* <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
@@ -177,5 +186,6 @@ export default function Home() {
 `}</style>
     </main>
     
+   
   );
 }
