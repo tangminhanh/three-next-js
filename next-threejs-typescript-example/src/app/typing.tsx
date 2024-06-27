@@ -17,7 +17,7 @@ const TypingEffect = () => {
         typeSpeed: 50,
         // backDelay: 1000, // Delay before typing starts again after backspacing
         loop: true, // Loop through strings infinitely
-        loopCount: 1, // Optional: number of loops, default is infinite
+        loopCount: 100, // Optional: number of loops, default is infinite
         showCursor: true,
         cursorChar: '|',
         autoInsertCss: true,

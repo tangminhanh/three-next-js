@@ -1,8 +1,9 @@
 'use client'
 import Image from "next/image";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import TypingEffect from '../typing';
 import TogglePlay from "../video";
+import { PageSkeleton } from "../ui/skeletons";
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hoveredElement, setHoveredElement] = useState<string | null>(null);
@@ -29,6 +30,7 @@ export default function Home() {
   }, []);
 
   return (
+    <Suspense fallback={<PageSkeleton />}>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <TypingEffect />
@@ -173,6 +175,7 @@ export default function Home() {
 
 
     </main>
+    </Suspense>
     // </SwipeableContainer>
   );
 }
