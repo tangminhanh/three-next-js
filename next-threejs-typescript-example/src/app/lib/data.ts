@@ -20,7 +20,7 @@ const companies: Company[] = [
     image: '/mediacorp.jpeg',
     method: ['hehe'],
     display: ['LangChain.py', 'vault.py'],
-    proj_img: ['/kmc.png','/girl.png']
+    proj_img: ['/comm.png','/girl.png']
  // Replace with the actual image URL
   },
 //   {

@@ -5,10 +5,14 @@ import Image from 'next/image';
 import {Bar} from '../ui/bar';
 
 const WorkExperience: React.FC = () => {
-    const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+     const [selectedImageIndices, setSelectedImageIndices] = useState<number[]>(companies.map(() => 0));
 
-  const handleButtonClick = (index: number) => {
-    setSelectedImageIndex(index);
+  const handleButtonClick = (companyIndex: number, imageIndex: number) => {
+    setSelectedImageIndices(prevIndices => {
+      const newIndices = [...prevIndices];
+      newIndices[companyIndex] = imageIndex;
+      return newIndices;
+    });
   };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -53,8 +57,8 @@ const WorkExperience: React.FC = () => {
           <div className="w-1/2 pl-4">
             
     <ul>
-    {companies.map((company, index) => (
-      <li key={index}>
+    {companies.map((company, companyIndex) => (
+      <li key={companyIndex}>
         <div className="relative rounded-xl mr-auto md:mr-0 md:ml-auto shadow-xl flex bg-slate-800 h-[20rem] sm:max-h-[none] sm:rounded-xl lg:h-[25rem] xl:h-auto xl:max-h-[25rem] dark:bg-primary/70 dark:backdrop-blur dark:ring-1 dark:ring-inset dark:ring-white/10 col-start-6 col-end-10 target target-show">
           <div className="relative w-full flex flex-col z-10">
             {/* Place any additional components or content here */}
@@ -68,7 +72,7 @@ const WorkExperience: React.FC = () => {
                           <button
                             type="button"
                             className="relative py-2 px-3 text-secondary"
-                            onClick={() => handleButtonClick(idx)}
+                            onClick={() => handleButtonClick(companyIndex, idx)}
                           >
                             {display}
                             <span className="absolute z-10 bottom-0 inset-x-3 h-px bg-secondary"></span>
@@ -81,9 +85,9 @@ const WorkExperience: React.FC = () => {
                 </div>
                 <div className="w-full flex-auto flex min-h-0 overflow-hidden">
                   <div className="w-full relative flex-auto rounded-xl">
-                    {selectedImageIndex !== null && selectedImageIndex < company.proj_img.length && (
+                    {selectedImageIndices[companyIndex] !== undefined && selectedImageIndices[companyIndex] < company.proj_img.length && (
                       <img
-                        src={company.proj_img[selectedImageIndex]}
+                        src={company.proj_img[selectedImageIndices[companyIndex]]}
                         alt=""
                         className="h-auto"
                       />
