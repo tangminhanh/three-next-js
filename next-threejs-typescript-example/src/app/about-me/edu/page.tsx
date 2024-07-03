@@ -47,7 +47,7 @@ const videoRef = useRef<HTMLVideoElement>(null);
               className="absolute inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 text-white text-2xl"
               onClick={togglePlay}
             >
-              Play
+              
             </button>
           )}
         </div>

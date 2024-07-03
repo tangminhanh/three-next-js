@@ -1,5 +1,5 @@
 // app/ui/skeletons
-import Spline from '@splinetool/react-spline';
+import Spline from 'splinetool/react-spline';
 
 export function PageSkeleton() {
   return (

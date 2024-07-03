@@ -4,7 +4,10 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import TypingEffect from '../typing';
 import TogglePlay from "../video";
 import { PageSkeleton } from "../ui/skeletons";
+import Hand from '../hand'; 
 export default function Home() {
+ 
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hoveredElement, setHoveredElement] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,6 +23,16 @@ export default function Home() {
       }
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const handImage = document.getElementById('hand-image');
+      if (handImage) {
+        handImage.classList.add('visible');
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Auto play the video when component mounts
@@ -132,53 +145,14 @@ export default function Home() {
              {/* <div className="max-w-3xl mx-auto target target-show"> */}
               <p className="mt-6 text-center max-w-3xl mx-auto leading-8 text-gray-400">Crafting beautiful and functional web applications is my passion. As a full-stack developer, I bring together my skills in front-end and back-end development to create seamless user experiences.</p>
               {/* </div> */}
+              <Hand/>
     </div>
-   
-
-      <div className=" grid jump text-center lg:mb-0 lg:w-full lg:max-w-sm lg:text-center">
-        <a
-  href="/about-me/edu"
-  className="group px-5 py-4 transition-colors jump">
-  <h2 className="mb-3 text-l font-semibold">
-    Swipe to know About Me{" "}
-    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none jump">
-      <Image
-              src="/hand.png"
-              alt="Vercel Logo"
-              className="dark:invert "
-              width={60}
-              height={12}
-              priority
-            />
-    </span>
-  </h2>
-</a>
-      </div>
+          
+      
 
    
-
-
-
-
-
-      <style jsx>{`
-  @keyframes jump {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .jump {
-    animation: jump 1s infinite;
-  }
-`}</style>
-
 
     </main>
-    // </Suspense>
-    // </SwipeableContainer>
+
   );
 }
