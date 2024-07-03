@@ -5,5 +5,7 @@ export interface Company {
   details: string;
   image: string; 
   method: string[];
-  // URL to the company's image
+  display: string[];
+  proj_img: string[];
+
 }
