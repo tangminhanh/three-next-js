@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import TypingEffect from './typing';
 import { tiny5 } from './ui/fonts';
 import {Home} from './about-me/page';
-export default function Home() {
-  <Home/>
+export default function Page() {
+  
 //   const videoRef = useRef<HTMLVideoElement>(null);
 //   const [isPlaying, setIsPlaying] = useState(false);
 
