@@ -8,7 +8,7 @@ const companies: Company[] = [
     proj_name: 'ML Ticket',
     details: 'A comprehensive customer support solution with features such as dynamic fields and blocks, customizable workflows, SLA management, ticket templates, scheduled tickets, email templates, and email-to-ticket functionality.',
     image: '/kmcc.png',
-    method: ['Tailwind','Typescript'],
+    method: ['Python','PyTorch'],
     display: ['Kedro.py', 'TextClassification.py'],
     proj_img: ['/kmc.png','/girl.png']
   },
@@ -28,7 +28,7 @@ const companies: Company[] = [
     role: 'Data Engineer',
     proj_name: 'Blbla',
     details: 'Project details for Company C',
-    image: '/st.png',
+    image: '/st.jpeg',
     method: ['AWS','NodeJS'],
     display: ['AWS.js', 'Vault.hehe'],
     proj_img: ['/comm.png','/girl.png']
