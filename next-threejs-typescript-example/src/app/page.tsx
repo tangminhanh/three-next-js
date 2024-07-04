@@ -4,14 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 import TypingEffect from './typing';
 import { tiny5 } from './ui/fonts';
 // import {Home} from './about-me/page';
-import Spline from '@splinetool/react-spline/next';
+import { Suspense } from 'react';
+
 
 export default function Page() {
+ 
     return (
     <main>
-      <Spline
-        scene="/scene (1).splinecode" 
-      />
+      
     </main>
   );
 

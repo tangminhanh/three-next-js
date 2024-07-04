@@ -41,23 +41,7 @@ const WorkExperience: React.FC = () => {
         {selectedCompanyIndex !== null && (
           <div className="flex w-full mt-10 flex-wrap">
             <div className="flex w-full mb-10">
-              <div className="w-1/2 pr-4">
-                <div className="flex flex-col py-3">
-                  <p className="text-sm text-secondary font-medium">{companies[selectedCompanyIndex].role}</p>
-                  <dt className="text-2xl font-semibold leading-7 text-gray-100 mt-2">{companies[selectedCompanyIndex].proj_name}</dt>
-                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
-                    <p className="flex-auto">{companies[selectedCompanyIndex].details}</p>
-                  </dd>
-                  <div className="flex space-x-2 mt-3">
-                    {Array.isArray(companies[selectedCompanyIndex].method) && companies[selectedCompanyIndex].method.map((method, idx) => (
-                      <span key={idx} className="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-gray-800 bg-darkPrimary">
-                        {method}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="w-1/2 pl-4">
+               <div className="w-1/2 pr-4">
                 <div className="relative rounded-xl mr-auto md:mr-0 md:ml-auto shadow-xl flex bg-slate-800 h-[20rem] sm:max-h-[none] sm:rounded-xl lg:h-[25rem] xl:h-auto xl:max-h-[25rem] dark:bg-primary/70 dark:backdrop-blur dark:ring-1 dark:ring-inset dark:ring-white/10 col-start-6 col-end-10 target target-show">
                   <div className="relative w-full flex flex-col z-10">
                     <Bar />
@@ -96,6 +80,23 @@ const WorkExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              <div className="w-1/2 pl-4">
+                <div className="flex flex-col py-3">
+                  <p className="text-sm text-secondary font-medium">{companies[selectedCompanyIndex].role}</p>
+                  <dt className="text-2xl font-semibold leading-7 text-gray-100 mt-2">{companies[selectedCompanyIndex].proj_name}</dt>
+                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                    <p className="flex-auto">{companies[selectedCompanyIndex].details}</p>
+                  </dd>
+                  <div className="flex space-x-2 mt-3">
+                    {Array.isArray(companies[selectedCompanyIndex].method) && companies[selectedCompanyIndex].method.map((method, idx) => (
+                      <span key={idx} className="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-gray-800 bg-darkPrimary">
+                        {method}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+             
             </div>
           </div>
         )}

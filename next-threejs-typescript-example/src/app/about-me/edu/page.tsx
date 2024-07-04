@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from 'react';
 import { CardAboutMe } from '../../ui/card'; // Correctly import named export
-
+import Loading from '../loading'
 export default function Page() {
 const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -26,6 +26,7 @@ const videoRef = useRef<HTMLVideoElement>(null);
       setIsPlaying(true);
     }
   }, []);
+  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="flex flex-col items-center">
