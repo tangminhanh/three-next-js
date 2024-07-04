@@ -1,10 +1,11 @@
 'use client'
 import React, { useState } from 'react';
-import companies from '../lib/data'; // Adjust the path as needed
+import companies from '../lib/data';
 import Image from 'next/image';
 import { Bar } from '../ui/bar';
 
 const WorkExperience: React.FC = () => {
+  const [selectedCompanyIndex, setSelectedCompanyIndex] = useState<number | null>(null);
   const [selectedImageIndices, setSelectedImageIndices] = useState<number[]>(companies.map(() => 0));
 
   const handleButtonClick = (companyIndex: number, imageIndex: number) => {
@@ -19,44 +20,32 @@ const WorkExperience: React.FC = () => {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="w-full flex flex-col items-center">
         <h1 className="custom-font mb-2 text-xl md:text-2xl">Work Experience</h1>
-        {/* <div className='timeline'>
-          {companies.map((company, companyIndex) => (
-            <div key={companyIndex} className="flex items-center mb-4">
+        <div className="flex space-x-8 py-4">
+          {companies.map((company, index) => (
+            <div key={index} className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedCompanyIndex(index)}>
               <Image
+                alt={company.name}
                 src={company.image}
-                alt={`${company.name} logo`}
-                width={50}
-                height={50}
-                className="mr-4"
+                width={80}
+                height={80}
+                className="rounded-full"
               />
-              <strong>{company.name}</strong>
+              <div className="mt-2 text-center">{company.name}</div>
             </div>
           ))}
-        </div> */}
-
-        {/* </div> */}
-        <div className="flex w-full mt-10 flex-wrap">
-          {companies.map((company, companyIndex) => (
-            <div key={companyIndex} className="flex w-full mb-10">
+        </div>
+        {selectedCompanyIndex !== null && (
+          <div className="flex w-full mt-10 flex-wrap">
+            <div className="flex w-full mb-10">
               <div className="w-1/2 pr-4">
                 <div className="flex flex-col py-3">
-                  <div className="flex items-center mb-4">
-                    <Image
-                      src={company.image}
-                      alt={`${company.name} logo`}
-                      width={50}
-                      height={50}
-                      className="mr-4"
-                    />
-                    <strong>{company.name}</strong>
-                  </div>
-                  <p className="text-sm text-secondary font-medium">{company.role}</p>
-                  <dt className="text-2xl font-semibold leading-7 text-gray-100 mt-2">{company.proj_name}</dt>
+                  <p className="text-sm text-secondary font-medium">{companies[selectedCompanyIndex].role}</p>
+                  <dt className="text-2xl font-semibold leading-7 text-gray-100 mt-2">{companies[selectedCompanyIndex].proj_name}</dt>
                   <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
-                    <p className="flex-auto">{company.details}</p>
+                    <p className="flex-auto">{companies[selectedCompanyIndex].details}</p>
                   </dd>
                   <div className="flex space-x-2 mt-3">
-                    {Array.isArray(company.method) && company.method.map((method, idx) => (
+                    {Array.isArray(companies[selectedCompanyIndex].method) && companies[selectedCompanyIndex].method.map((method, idx) => (
                       <span key={idx} className="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-gray-800 bg-darkPrimary">
                         {method}
                       </span>
@@ -72,12 +61,12 @@ const WorkExperience: React.FC = () => {
                       <div className="flex-none overflow-auto whitespace-nowrap flex" style={{ opacity: 1 }}>
                         <div className="relative flex-none min-w-full px-1">
                           <ul className="flex text-sm leading-6 text-slate-400">
-                            {Array.isArray(company.display) && company.display.map((display, idx) => (
+                            {Array.isArray(companies[selectedCompanyIndex].display) && companies[selectedCompanyIndex].display.map((display, idx) => (
                               <li key={idx} className="flex-none">
                                 <button
                                   type="button"
                                   className="relative py-2 px-3 text-secondary"
-                                  onClick={() => handleButtonClick(companyIndex, idx)}
+                                  onClick={() => handleButtonClick(selectedCompanyIndex, idx)}
                                 >
                                   {display}
                                   <span className="absolute z-10 bottom-0 inset-x-3 h-px bg-secondary"></span>
@@ -90,9 +79,9 @@ const WorkExperience: React.FC = () => {
                       </div>
                       <div className="w-full flex-auto flex min-h-0 overflow-hidden">
                         <div className="w-full relative flex-auto rounded-xl">
-                          {selectedImageIndices[companyIndex] !== undefined && selectedImageIndices[companyIndex] < company.proj_img.length && (
+                          {selectedImageIndices[selectedCompanyIndex] !== undefined && selectedImageIndices[selectedCompanyIndex] < companies[selectedCompanyIndex].proj_img.length && (
                             <img
-                              src={company.proj_img[selectedImageIndices[companyIndex]]}
+                              src={companies[selectedCompanyIndex].proj_img[selectedImageIndices[selectedCompanyIndex]]}
                               alt=""
                               className="h-auto"
                             />
@@ -104,8 +93,8 @@ const WorkExperience: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
     </main>
   );
