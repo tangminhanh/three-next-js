@@ -3,9 +3,18 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from 'react';
 import TypingEffect from './typing';
 import { tiny5 } from './ui/fonts';
-import {Home} from './about-me/page';
+// import {Home} from './about-me/page';
+import Spline from '@splinetool/react-spline/next';
+
 export default function Page() {
-  
+    return (
+    <main>
+      <Spline
+        scene="/scene (1).splinecode" 
+      />
+    </main>
+  );
+
 //   const videoRef = useRef<HTMLVideoElement>(null);
 //   const [isPlaying, setIsPlaying] = useState(false);
 

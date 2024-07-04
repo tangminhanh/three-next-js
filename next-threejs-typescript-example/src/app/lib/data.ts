@@ -10,7 +10,7 @@ const companies: Company[] = [
     image: '/kmcc.png',
     method: ['Python','PyTorch'],
     display: ['Kedro.py', 'TextClassification.py'],
-    proj_img: ['/kmc.png','/girl.png']
+    proj_img: ['/kedro-pipeline (1).png','/girl.png']
   },
   {
     name: 'Mediacorp',
@@ -39,6 +39,16 @@ const companies: Company[] = [
     proj_name: 'bkajbfk',
     details: 'Project details for Company C',
     image: '/tum.png',
+    method: ['AWS','NodeJS'],
+    display: ['AWS.js', 'Vault.hehe'],
+    proj_img: ['/comm.png','/girl.png']
+  },
+   {
+    name: 'NTU@SG',
+    role: 'Lab Assistant',
+    proj_name: 'bkajbfk',
+    details: 'Project details for Company C',
+    image: '/ntu.jpeg',
     method: ['AWS','NodeJS'],
     display: ['AWS.js', 'Vault.hehe'],
     proj_img: ['/comm.png','/girl.png']

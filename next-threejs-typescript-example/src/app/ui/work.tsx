@@ -20,9 +20,10 @@ const WorkExperience: React.FC = () => {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="w-full flex flex-col items-center">
         <h1 className="custom-font mb-2 text-xl md:text-2xl">Work Experience</h1>
-        <div className="flex space-x-8 py-4">
+        <div className="flex space-x-8 py-4 ">
           {companies.map((company, index) => (
-            <div key={index} className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedCompanyIndex(index)}>
+            <div key={index} className="flex flex-col px-4 items-center cursor-pointer" onClick={() => setSelectedCompanyIndex(index)}>
+              <div className="gradient-border p-1">
               <Image
                 alt={company.name}
                 src={company.image}
@@ -30,7 +31,10 @@ const WorkExperience: React.FC = () => {
                 height={80}
                 className="rounded-full"
               />
-              <div className="mt-2 text-center">{company.name}</div>
+            </div>
+              <div className={`mt-2 text-center font-semibold ml-2 text-sm bg-gradient-to-r bg-clip-text  ${
+  selectedCompanyIndex === index ? 'text-transparent from-pink-400 via-purple-500 to-indigo-500 animate-text dark:drop-shadow-[0_0_0.9rem_#ffffff70] scale-115' : ''
+}`}>{company.name}</div>
             </div>
           ))}
         </div>

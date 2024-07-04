@@ -16,9 +16,9 @@ const iconMap = {
 export function CardAboutMe() {
   return (
     <>
-      <Card title="Experience" value="1 YEAR" type="pending" />
+      <a href="/gf"><Card title="Experience" value="1 YEAR" type="pending" /></a>
       <Card title="Completed" value="10+ PROJECTS" type="invoices" />
-      <Card title="Worked in" value="4 COMPANIES" type="customers" />
+      <a href="/about-me/work"><Card title="Worked in" value="4 COMPANIES" type="customers" /></a>
     </>
   );
 }
