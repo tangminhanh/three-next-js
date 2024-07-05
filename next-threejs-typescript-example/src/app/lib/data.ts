@@ -15,8 +15,8 @@ const companies: Company[] = [
   {
     name: 'Mediacorp',
     role: 'Business Analyst',
-    proj_name: 'Blbla',
-    details: 'Project details for Company B',
+    proj_name: 'CNA News Video Ingestion Dashboard Enhancement',
+    details: 'Implemented MFA Login, Key Vault storing Secrets, Enhance Metadata Display,Search & Filter Function, and Integrated AI Video Detection Model to enhance ',
     image: '/mediacorp.jpeg',
     method: ['AWS','NodeJS'],
     display: ['AWS.js', 'Vault.hehe'],
