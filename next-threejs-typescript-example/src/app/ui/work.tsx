@@ -65,17 +65,18 @@ const WorkExperience: React.FC = () => {
                           <div className="absolute bottom-0 inset-x-0 h-px bg-slate-500/30"></div>
                         </div>
                       </div>
-                      <div className="w-full flex-auto flex min-h-0 overflow-hidden">
-                        <div className="w-full relative flex-auto rounded-xl">
-                          {selectedImageIndices[selectedCompanyIndex] !== undefined && selectedImageIndices[selectedCompanyIndex] < companies[selectedCompanyIndex].proj_img.length && (
-                            <img
-                              src={companies[selectedCompanyIndex].proj_img[selectedImageIndices[selectedCompanyIndex]]}
-                              alt=""
-                              className="h-100 object-center bg-white"
-                            />
-                          )}
-                        </div>
+                      <div className="w-full flex flex-auto min-h-0 overflow-hidden">
+                      <div className="w-full relative bg-white flex-auto rounded-xl flex justify-center items-center">
+                        {selectedImageIndices[selectedCompanyIndex] !== undefined && 
+                        selectedImageIndices[selectedCompanyIndex] < companies[selectedCompanyIndex].proj_img.length && (
+                          <img
+                            src={companies[selectedCompanyIndex].proj_img[selectedImageIndices[selectedCompanyIndex]]}
+                            alt=""
+                            className="max-w-full max-h-full object-center"
+                          />
+                        )}
                       </div>
+                    </div>
                     </div>
                   </div>
                 </div>

@@ -15,7 +15,7 @@ const companies: Company[] = [
   {
     name: 'Mediacorp',
     role: 'Business Analyst',
-    proj_name: 'CNA News Video Ingestion Dashboard Enhancement',
+    proj_name: 'CNA News Ingestion Dashboard Enhancement',
     details: 'Implemented MFA Login, Key Vault storing Secrets, Search & Filter Feature, and Integrated AI Video Detection Model to enhance metadata display ',
     image: '/mediacorp.jpeg',
     method: ['NodeJS','Vault','AWS','Lambda','Cognito','EC2','Docker','hbs'],
