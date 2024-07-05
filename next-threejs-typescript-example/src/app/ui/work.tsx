@@ -44,16 +44,18 @@ const WorkExperience: React.FC = () => {
                <div className="w-1/2 pr-4">
                 <div className="relative rounded-xl mr-auto md:mr-0 md:ml-auto shadow-xl flex bg-slate-800 h-[20rem] sm:max-h-[none] sm:rounded-xl lg:h-[25rem] xl:h-auto xl:max-h-[25rem] dark:bg-primary/70 dark:backdrop-blur dark:ring-1 dark:ring-inset dark:ring-white/10 col-start-6 col-end-10 target target-show">
                   <div className="relative w-full flex flex-col z-10">
+                    {/* <div className="gradient-border p-1"><Bar /></div> */}
                     <Bar />
                     <div className="relative min-h-0 flex-auto flex flex-col">
                       <div className="flex-none overflow-auto whitespace-nowrap flex" style={{ opacity: 1 }}>
-                        <div className="relative flex-none min-w-full px-1">
-                          <ul className="flex text-sm leading-6 text-slate-400">
-                            {Array.isArray(companies[selectedCompanyIndex].display) && companies[selectedCompanyIndex].display.map((display, idx) => (
+                      <div className="relative flex-none min-w-full px-1">
+                        <ul className="flex text-sm leading-6 text-slate-300">
+                          {Array.isArray(companies[selectedCompanyIndex].display) && 
+                            companies[selectedCompanyIndex].display.map((display, idx) => (
                               <li key={idx} className="flex-none">
                                 <button
                                   type="button"
-                                  className="relative py-2 px-3 text-secondary"
+                                  className={`relative py-2 px-3 text-secondary border-s-slate-800 hover:bg-slate-900 hover:rounded-lg ${selectedImageIndices[selectedCompanyIndex] === idx ? 'bg-slate-800 rounded-r-lg border-3 border-b-pink text-pink-400' : 'bg-slate-700'}`}
                                   onClick={() => handleButtonClick(selectedCompanyIndex, idx)}
                                 >
                                   {display}
@@ -61,12 +63,12 @@ const WorkExperience: React.FC = () => {
                                 </button>
                               </li>
                             ))}
-                          </ul>
-                          <div className="absolute bottom-0 inset-x-0 h-px bg-slate-500/30"></div>
-                        </div>
+                        </ul>
+                        <div className="absolute bottom-0 inset-x-0 h-px bg-slate-500/30"></div>
                       </div>
-                      <div className="w-full flex flex-auto min-h-0 overflow-hidden">
-                      <div className="w-full relative bg-white flex-auto rounded-xl flex justify-center items-center">
+                    </div>
+                      <div className="w-full flex flex-auto min-h-0 overflow-hidden border-b-lg">
+                      <div className="w-full relative bg-white flex-auto border-b-lg rounded-b-xl flex justify-center items-center">
                         {selectedImageIndices[selectedCompanyIndex] !== undefined && 
                         selectedImageIndices[selectedCompanyIndex] < companies[selectedCompanyIndex].proj_img.length && (
                           <img
@@ -83,14 +85,14 @@ const WorkExperience: React.FC = () => {
               </div>
               <div className="w-1/2 pl-4">
                 <div className="flex flex-col py-3">
-                  <p className="text-sm text-secondary font-medium">{companies[selectedCompanyIndex].role}</p>
+                  <p className="text-sm text-secondary font-medium text-purple-500">{companies[selectedCompanyIndex].role}</p>
                   <dt className="text-2xl font-semibold leading-7 text-gray-100 mt-2">{companies[selectedCompanyIndex].proj_name}</dt>
                   <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
                     <p className="flex-auto">{companies[selectedCompanyIndex].details}</p>
                   </dd>
                   <div className="flex space-x-2 mt-3">
                     {Array.isArray(companies[selectedCompanyIndex].method) && companies[selectedCompanyIndex].method.map((method, idx) => (
-                      <span key={idx} className="inline-flex items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-gray-800 bg-darkPrimary">
+                      <span key={idx} className="inline-flex bg-purple-400 items-center gap-x-1.5 rounded-md px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-gray-800 bg-darkPrimary">
                         {method}
                       </span>
                     ))}

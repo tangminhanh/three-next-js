@@ -83,6 +83,13 @@ body {
   border-radius: 50%;
 }
 
+.gradient-bor {
+  background: linear-gradient(to right, #ec4899, #8b5cf6, #6366f1);
+  padding: 3px;
+  /* border-radius */
+  
+}
+
 .gradient-border img {
   border-radius: 50%;
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 const companies: Company[] = [
   {
     name: 'KMC Solutions',
-    role: 'Fullstack Development',
+    role: 'Fullstack Development Intern',
     proj_name: 'ML Ticket',
     details: 'A comprehensive customer support solution with features such as dynamic fields and blocks, customizable workflows, SLA management, ticket templates, scheduled tickets, email templates, and email-to-ticket functionality.',
     image: '/kmcc.png',
@@ -14,24 +14,24 @@ const companies: Company[] = [
   },
   {
     name: 'Mediacorp',
-    role: 'Business Analyst',
+    role: 'Business Analyst Intern',
     proj_name: 'CNA News Ingestion Dashboard Enhancement',
-    details: 'Implemented MFA Login, Key Vault storing Secrets, Search & Filter Feature, and Integrated AI Video Detection Model to enhance metadata display ',
+    details: "Built MFA Login, Key Vault storing Secrets, Search & Filter Feature, and Integrated AI Video Detection Model. Implemented a seamless workflow to trigger AI model processing upon user interaction with each video, enhancing the dashboard's analytical capabilities and providing real-time insights",
     image: '/mediacorp.jpeg',
-    method: ['NodeJS','Vault','AWS','Lambda','Cognito','EC2','Docker','hbs'],
-    display: ['dashboard.hbs', 'Vault','CNA Fast'],
+    method: ['NodeJS','Vault','AWS','Docker','Lambda','Cognito','EC2','RESTful API'],
+    display: ['dashboard.hbs', 'vault.ssh','CNA Fast'],
     proj_img: ['/dashboard.png','/vault.png','/fast.png']
  // Replace with the actual image URL
   },
   {
     name: 'STMicroelectronics',
-    role: 'Data Engineer',
-    proj_name: 'Blbla',
-    details: 'Project details for Company C',
+    role: 'Data Engineer Intern',
+    proj_name: 'MLOPs',
+    details: 'Developed the backend of generalised monitoring software for machine learning models classifying wire bond integrity in semiconductor chips. Collaborated with a multidisciplinary team of data scientists and engineers to design testing solution architecture.',
     image: '/st.jpeg',
-    method: ['AWS','NodeJS'],
-    display: ['AWS.js', 'Vault.hehe'],
-    proj_img: ['/comm.png','/girl.png']
+    method: ['FastAPI','Spicy.stats','Scikit-Learn','Dataiku'],
+    display: ['mlops', 'data_quality','alert'],
+    proj_img: ['/mlops.jpg','/datamlops.jpg']
   },
   {
     name: 'TUM Asia',
