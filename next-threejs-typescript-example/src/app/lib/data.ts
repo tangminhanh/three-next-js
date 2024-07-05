@@ -18,9 +18,9 @@ const companies: Company[] = [
     proj_name: 'CNA News Video Ingestion Dashboard Enhancement',
     details: 'Implemented MFA Login, Key Vault storing Secrets, Search & Filter Feature, and Integrated AI Video Detection Model to enhance metadata display ',
     image: '/mediacorp.jpeg',
-    method: ['NodeJS','Vault','AWS','Lambda','Cognito','EC2','Docker'],
-    display: ['AWS.js', 'Vault.hehe'],
-    proj_img: ['/comm.png','/girl.png']
+    method: ['NodeJS','Vault','AWS','Lambda','Cognito','EC2','Docker','hbs'],
+    display: ['dashboard.hbs', 'Vault','CNA Fast'],
+    proj_img: ['/dashboard.png','/vault.png','/fast.png']
  // Replace with the actual image URL
   },
   {

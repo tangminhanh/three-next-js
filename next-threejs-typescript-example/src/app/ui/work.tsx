@@ -71,7 +71,7 @@ const WorkExperience: React.FC = () => {
                             <img
                               src={companies[selectedCompanyIndex].proj_img[selectedImageIndices[selectedCompanyIndex]]}
                               alt=""
-                              className="h-auto"
+                              className="h-100 object-center bg-white"
                             />
                           )}
                         </div>
