@@ -5,7 +5,7 @@ const companies: Company[] = [
   {
     name: 'KMC Solutions',
     role: 'Fullstack Development Intern',
-    proj_name: 'ML Ticket',
+    proj_name: 'AI for Auto-Ticket Categorization',
     details: 'A comprehensive customer support solution with features such as dynamic fields and blocks, customizable workflows, SLA management, ticket templates, scheduled tickets, email templates, and email-to-ticket functionality.',
     image: '/kmcc.png',
     method: ['Python','PyTorch'],

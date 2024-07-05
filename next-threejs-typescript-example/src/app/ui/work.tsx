@@ -49,13 +49,13 @@ const WorkExperience: React.FC = () => {
                     <div className="relative min-h-0 flex-auto flex flex-col">
                       <div className="flex-none overflow-auto whitespace-nowrap flex" style={{ opacity: 1 }}>
                       <div className="relative flex-none min-w-full px-1">
-                        <ul className="flex text-sm leading-6 text-slate-300">
+                        <ul className="custom-font flex text-sm leading-6 text-slate-300">
                           {Array.isArray(companies[selectedCompanyIndex].display) && 
                             companies[selectedCompanyIndex].display.map((display, idx) => (
                               <li key={idx} className="flex-none">
                                 <button
                                   type="button"
-                                  className={`relative py-2 px-3 text-secondary border-s-slate-800 hover:bg-slate-900 hover:rounded-lg ${selectedImageIndices[selectedCompanyIndex] === idx ? 'bg-slate-800 rounded-r-lg border-3 border-b-pink text-pink-400' : 'bg-slate-700'}`}
+                                  className={`relative py-2 px-3 text-secondary border-s-slate-800 hover:bg-slate-900 hover:rounded-lg ${selectedImageIndices[selectedCompanyIndex] === idx ? 'bg-slate-700 rounded-r-lg border-3 border-b-pink text-pink-400' : 'bg-slate-800'}`}
                                   onClick={() => handleButtonClick(selectedCompanyIndex, idx)}
                                 >
                                   {display}
