@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef } from 'react';
 import { CardAboutMe } from '../../ui/card'; // Correctly import named export
 import Loading from '../loading'
-export default function Page() {
+export default function Edu() {
 const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 

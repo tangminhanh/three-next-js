@@ -5,13 +5,18 @@ import TypingEffect from './typing';
 // import { tiny5 } from './ui/fonts';
 // import {Home} from './about-me/page';
 import { Suspense } from 'react';
-
+// import Home from './/about-me/page';
+// import Edu from './/about-me/edu/page'
+// import Work from './/about-me/work/page'
+import SwipeContainer from './SwipeContainers'
 
 export default function Page() {
  
     return (
     <main>
-      
+      <div className="container mx-auto p-4">
+      <SwipeContainer />
+    </div>
     </main>
   );
 

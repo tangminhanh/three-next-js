@@ -1,7 +1,7 @@
 import React from 'react';
 import WorkExperience from '../../ui/work'; // Adjust the path as needed
 
-const Home: React.FC = () => {
+const Work: React.FC = () => {
   return (
     <div>
       <WorkExperience />
@@ -9,4 +9,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Work;
