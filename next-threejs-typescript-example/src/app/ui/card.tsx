@@ -18,7 +18,7 @@ export function CardAboutMe() {
     <>
       <a href="/gf"><Card title="Experience" value="1 YEAR" type="pending" /></a>
       <Card title="Completed" value="10+ PROJECTS" type="invoices" />
-      <a href="/about-me/work"><Card title="Worked in" value="4 COMPANIES" type="customers" /></a>
+      <a href="/about-me/work"><Card title="Worked in" value="4+ COMPANIES" type="customers" /></a>
     </>
   );
 }

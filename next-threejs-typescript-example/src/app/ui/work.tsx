@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import companies from '../lib/data';
+import {companies} from '../lib/data';
 import Image from 'next/image';
 import { Bar } from '../ui/bar';
 

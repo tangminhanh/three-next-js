@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+}
+
+.staticContent {
+  flex: 1;
+  padding-top: 30%;
+  margin-left:40px;
+  padding-right: 140px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: black;
+  /* Adjust as needed */
+  z-index: 1;
+}
+
+.divider {
+  width: 2px;
+  background-color: black;
+  margin-left: 250px;
+  /* Adjust as needed to make space for the static content */
+}
+
+.timeline {
+  flex: 3;
+  margin-left: 252px;
+  /* Adjust as needed to align with the divider */
+  overflow-y: auto;
+}
+
+.timelineSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timelineTitle {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  /* transform: rotate(180deg); */
+  padding-right: 10px;
+  margin-right: 20px;
+  border-right: 2px solid black;
+  height: 100%;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  padding: 10px;
+  margin:20px;
+}
+
+.glass {
+  position: relative;
+  width: 180px;
+  height: 200px;
+  background: linear-gradient(#fff2, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -45px;
+  backdrop-filter: blur(10px);
+  transform: rotate(calc(var(--r) * 1deg));
+  /* Use the custom property for rotation */
+}
+
+.glassContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding:10px;
+}
+
+.glass::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.glass svg {
+  font-size: 2.5em;
+  fill: #fff;
+}
+
+.cardContainer:hover .glass {
+  cursor: pointer;
+  transform: rotate(0deg);
+  margin: 10px;
+}

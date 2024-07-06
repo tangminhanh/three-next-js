@@ -1,7 +1,8 @@
 import { Company } from './types';
+import {TimelineSection} from './types'
 import Image from "next/image";
 
-const companies: Company[] = [
+export const companies: Company[] = [
   {
     name: 'KMC Solutions',
     role: 'Fullstack Development Intern',
@@ -56,4 +57,27 @@ const companies: Company[] = [
   // Add more companies as needed
 ];
 
-export default companies;
+export const TimelineData: TimelineSection[] = [
+  {
+    title: 'C O D I N G',
+    items: ['Workshop CV', 'Workshop Database', 'AWS Collaboration'],
+  },
+  {
+    title: 'C O M M U N I T Y',
+    items: ['Maincom Community', 'GL Viet Camp', 'Programmer Chief Enitio Camp'],
+  },
+  {
+    title: 'C R E A T O R',
+    items: ['Vlog', 'TikTok', 'Blog'],
+  },
+  {
+    title: 'C O N T I N U E  S T U D Y',
+    items: [
+      'AWS Certification',
+      'Google Business Certification',
+      'Database Specialization Certification',
+      'Machine Learning for Data Science Certification',
+      'Web Development Certification',
+    ],
+  },
+];

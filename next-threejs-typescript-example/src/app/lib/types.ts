@@ -9,3 +9,7 @@ export interface Company {
   proj_img: string[];
 
 }
+export interface TimelineSection {
+  title: string;
+  items: string[];
+}
