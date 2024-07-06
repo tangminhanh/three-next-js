@@ -55,7 +55,7 @@ const WorkExperience: React.FC = () => {
                               <li key={idx} className="flex-none">
                                 <button
                                   type="button"
-                                  className={`relative py-2 px-3 text-secondary border-s-slate-800 hover:bg-slate-900 hover:rounded-lg ${selectedImageIndices[selectedCompanyIndex] === idx ? 'bg-slate-700 rounded-r-lg border-3 border-b-pink text-pink-400' : 'bg-slate-800'}`}
+                                  className={`relative py-2 px-3 text-secondary border-s-slate-800 hover:bg-slate-900 hover:rounded-lg ${selectedImageIndices[selectedCompanyIndex] === idx ? 'bg-slate-700 rounded-r-lg border-2 border-b-pink-500 text-pink-400' : 'bg-slate-800'}`}
                                   onClick={() => handleButtonClick(selectedCompanyIndex, idx)}
                                 >
                                   {display}
