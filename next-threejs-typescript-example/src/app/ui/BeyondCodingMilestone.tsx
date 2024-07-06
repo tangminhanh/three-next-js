@@ -23,30 +23,35 @@ const BeyondCodingPage: React.FC = () => {
       </div>
       {/* <div className={styles.divider}></div> */}
       <div className={styles.timeline}>
-  {/* Right scrollable timeline */}
-  {TimelineData.map((section, index) => (
-    <div key={index} className={styles.timelineSection}>
-      <h2 className={` text-xl  ${styles.timelineTitle}`}>{section.title}</h2>
-      <div className={`${styles.cardContainer}`}>
-        {section.items.map((item, idx) => (
-          <div
-            key={idx}
-            className={`${styles.glass}`}
-            style={{
-              '--r': calculateRotation(idx),
-              transform: `rotate(${calculateRotation(idx)}deg)`
-            }}
-            data-text={item}
-          >
-            <div className={styles.glassContent}>
-              <p>{item}</p>
+        {/* Right scrollable timeline */}
+        {TimelineData.map((section, index) => (
+          <div key={index} className={styles.timelineSection}>
+            <h2 className={`text-xl ${styles.timelineTitle}`}>{section.title}</h2>
+            <div className={styles.cardContainer}>
+              {section.items.map((item, idx) => {
+                const rotation = calculateRotation(idx);
+                return (
+                  <div
+                    key={idx}
+                    className={styles.glass}
+                    style={
+                      {
+                        '--r': `${rotation}deg`, // Use units
+                        transform: `rotate(${rotation}deg)`
+                      } as React.CSSProperties
+                    }
+                    data-text={item}
+                  >
+                    <div className={styles.glassContent}>
+                      <p>{item}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}
       </div>
-    </div>
-  ))}
-</div>
     </div>
   );
 };

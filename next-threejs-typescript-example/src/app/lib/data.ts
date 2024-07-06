@@ -9,7 +9,7 @@ export const companies: Company[] = [
     proj_name: 'AI for Auto-Ticket Categorization',
     details: 'A comprehensive customer support solution with features such as dynamic fields and blocks, customizable workflows, SLA management, ticket templates, scheduled tickets, email templates, and email-to-ticket functionality.',
     image: '/kmcc.png',
-    method: ['Python','PyTorch'],
+    method: ['Python','PyTorch','Hugging Face'],
     display: ['Kedro.py', 'TextClassification.py'],
     proj_img: ['/kedro-pipeline (1).png','/girl.png']
   },
@@ -19,7 +19,7 @@ export const companies: Company[] = [
     proj_name: 'CNA News Ingestion Dashboard Enhancement',
     details: "Built MFA Login, Key Vault storing Secrets, Search & Filter Feature, and Integrated AI Video Detection Model. Implemented a seamless workflow to trigger AI model processing upon user interaction with each video, enhancing the dashboard's analytical capabilities and providing real-time insights",
     image: '/mediacorp.jpeg',
-    method: ['NodeJS','Vault','AWS','Docker','ExpressJS','Cognito','EC2','REST APIs'],
+    method: ['NodeJS','Vault','AWS','Docker','ExpressJS','Cognito','REST APIs'],
     display: ['dashboard.hbs', 'vault.ssh','CNA Fast'],
     proj_img: ['/dashboard.png','/vault.png','/fast.png']
  // Replace with the actual image URL
