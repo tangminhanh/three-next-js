@@ -1,5 +1,6 @@
 /* BeyondCoding.module.css */
 .container {
+  padding-top:50px;
   display: flex;
   overflow: hidden;
   height: 100vh;
@@ -41,6 +42,9 @@
   margin-right: 30px; /* Increase the margin-right to push the cards to the right */
   border-right: 2px solid black;
   height: 100%;
+    background: linear-gradient(to bottom, #ec4899, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 }
 
 .cardContainer {
@@ -90,7 +94,7 @@
   cursor: pointer;
   transform: rotate(0deg) !important;
   margin: 0 3px;
-  align-item:center;
+  /* align-item:center; */
   /* padding-left:10px; */
 }
 
