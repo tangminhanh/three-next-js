@@ -1,6 +1,5 @@
 // app/ui/BeyondCoding.tsx
 'use client'
-// app/ui/BeyondCoding.tsx
 import React from 'react';
 import styles from './BeyondCoding.module.css'; // Import your CSS for styling
 import { TimelineData } from '../lib/data'; // Assuming you have your data in a separate file
@@ -22,7 +21,7 @@ const BeyondCodingPage: React.FC = () => {
         <h1>Beyond Coding</h1>
         <p>This is static content on the left side.</p>
       </div>
-      <div className={styles.divider}></div>
+      {/* <div className={styles.divider}></div> */}
       <div className={styles.timeline}>
   {/* Right scrollable timeline */}
   {TimelineData.map((section, index) => (

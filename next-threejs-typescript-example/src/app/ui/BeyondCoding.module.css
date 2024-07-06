@@ -19,7 +19,6 @@
   width: 2px;
   background-color: black;
   margin-left: 20px;
-  /* Adjust as needed */
 }
 
 .timeline {
@@ -47,16 +46,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   transition: transform 0.5s ease;
-      /* Add transition for smooth animation */
-  /* Adjust as needed */
 }
 
 @media (min-width: 768px) {
   .cardContainer {
-    gap: 30px;
-    /* Adjust gap for larger screens */
+    gap: 20px;
   }
 }
 
@@ -95,18 +91,17 @@
   align-items: center;
   color: #fff;
   transition: transform 0.5s ease;
-      /* Keep the transition for smooth animation */
 }
 
 .cardContainer:hover .glass {
   cursor: pointer;
-  transform: rotate(0deg) ;
-    /* Reset rotation on hover */}
+  transform: rotate(0deg) !important;
+  /* Use !important to ensure it overrides inline styles */
+}
 
 @media (max-width: 768px) {
   .glass {
     width: calc(100% - 20px);
-    /* Adjust width for smaller screens */
     margin: 0 10px;
   }
 }
