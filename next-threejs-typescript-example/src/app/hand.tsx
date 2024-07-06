@@ -3,19 +3,16 @@ import React, { useEffect, useRef } from 'react';
 import Image from "next/image";
 import styles from './Hand.module.css'; // Import the CSS module
 
-export default function Hand() {
-    const handImageRef = useRef(null);
+
+const Hand: React.FC = () => {
+    const handImageRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            console.log('3s');
-            if (handImageRef.current) {
-                handImageRef.current.classList.remove(styles.hidden);
-                handImageRef.current.classList.add(styles.visible); // Add the visible class after the delay
-            }
-        }, 3000);
-
-        return () => clearTimeout(timer);
+        console.log('3s');
+        if (handImageRef.current) {
+            (handImageRef.current as HTMLElement).classList.remove(styles.hidden);
+            (handImageRef.current as HTMLElement).classList.add(styles.visible); // Add the visible class after the delay
+        }
     }, []);
 
     return (
@@ -38,3 +35,6 @@ export default function Hand() {
         </div>
     );
 }
+
+export default Hand;
+

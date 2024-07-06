@@ -36,7 +36,6 @@ const videoRef = useRef<HTMLVideoElement>(null);
             ref={videoRef}
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent"
             src="/Artist inside.mp4"
-            alt="Animation Video"
             width={224}
             height={168}
             autoPlay

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from 'react';
 import TypingEffect from './typing';
-import { tiny5 } from './ui/fonts';
+// import { tiny5 } from './ui/fonts';
 // import {Home} from './about-me/page';
 import { Suspense } from 'react';
 

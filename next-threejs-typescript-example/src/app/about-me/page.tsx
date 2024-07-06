@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef, Suspense } from 'react';
 import TypingEffect from '../typing';
 import TogglePlay from "../video";
-import { PageSkeleton } from "../ui/skeletons";
+// import { PageSkeleton } from "../ui/skeletons";
 import Hand from '../hand'; 
 export default function Home() {
  
@@ -80,7 +80,6 @@ export default function Home() {
             ref={videoRef}
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent"
             src="/il.mp4"
-            alt="Animation Video"
             width={224}
             height={168}
             autoPlay
@@ -101,7 +100,6 @@ export default function Home() {
             ref={videoRef}
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent"
             src="/coding.mp4"
-            alt="Animatifon Video"
             width={224}
             height={126}
             autoPlay
@@ -123,7 +121,6 @@ export default function Home() {
             ref={videoRef}
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent"
             src="/com.mp4"
-            alt="Animatifon Video"
             width={224}
             height={168}
             autoPlay
