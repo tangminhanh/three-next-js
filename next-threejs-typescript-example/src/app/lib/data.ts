@@ -61,14 +61,19 @@ export const TimelineData: TimelineSection[] = [
   {
     title: 'C O D I N G',
     items: ['Workshop CV', 'Workshop Database', 'AWS Collaboration'],
+    img: ['hehe', 'hihi','hoho']
   },
   {
     title: 'C O M M U N I T Y',
     items: ['Maincom Community', 'GL Viet Camp', 'Programmer Chief Enitio Camp'],
+    img: ['hehe', 'hihi','hoho']
+
   },
   {
     title: 'C R E A T O R',
     items: ['Vlog', 'TikTok', 'Blog'],
+    img: ['hehe', 'hihi','hoho']
+
   },
   {
     title: 'C O N T I N U E  S T U D Y',
@@ -79,5 +84,7 @@ export const TimelineData: TimelineSection[] = [
       'Machine Learning for Data Science Certification',
       'Web Development Certification',
     ],
+    img: ['hehe', 'hihi','hoho']
+
   },
 ];

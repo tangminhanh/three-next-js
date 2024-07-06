@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { useSwipeable } from 'react-swipeable';
-import Home from './/about-me/page';
-import Edu from './/about-me/edu/page'
-import Work from './/about-me/work/page'
+import React, { useRef } from 'react';
+import Home from './about-me/page';
+import Edu from './about-me/edu/page';
+import Work from './about-me/work/page';
+import Community from './about-me/community/page';
 
 const SwipeContainer = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,6 +37,9 @@ const SwipeContainer = () => {
       </div>
       <div className="slide" style={{ height: '100%' }}>
         <Work />
+      </div>
+      <div className="slide" style={{ height: '100%' }}>
+        <Community />
       </div>
     </div>
   );

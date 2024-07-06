@@ -1,0 +1,6 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding: 5px;
+}

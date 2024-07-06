@@ -12,4 +12,5 @@ export interface Company {
 export interface TimelineSection {
   title: string;
   items: string[];
+  img: string[];
 }
