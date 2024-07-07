@@ -4,17 +4,26 @@ import Edu from './about-me/edu/page';
 import Work from './about-me/work/page';
 import Community from './about-me/community/page';
 
-const ScrollContext = createContext();
+interface ScrollContextType {
+  scrollToWorkSection: () => void;
+}
+
+const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
 
 export const useScrollContext = () => {
-  return useContext(ScrollContext);
+  const context = useContext(ScrollContext);
+  if (!context) {
+    throw new Error('useScrollContext must be used within a ScrollProvider');
+  }
+  return context;
 };
 
+
 const SwipeContainer = () => {
-  const containerRef = useRef(null);
-  const workSectionRef = useRef(null);
-  const eduSectionRef = useRef(null);
-  const homeSectionRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const workSectionRef = useRef<HTMLDivElement>(null);
+  const eduSectionRef = useRef<HTMLDivElement>(null);
+  const homeSectionRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     if (!containerRef.current) return;
@@ -31,17 +40,17 @@ const SwipeContainer = () => {
     }
   };
 
-  const scrollToWorkSection = () => {
+    const scrollToWorkSection = () => {
     if (workSectionRef.current) {
       workSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-const scrollToEduSection = () => {
-    if (workSectionRef.current) {
-      workSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    const scrollToEduSection = () => {
+        if (eduSectionRef.current) {
+        eduSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
   return (
     <ScrollContext.Provider value={{ scrollToWorkSection }}>
@@ -54,7 +63,7 @@ const scrollToEduSection = () => {
         <div className="slide" style={{ height: '100%' }}>
           <Home />
         </div>
-        <div className="slide" style={{ height: '100%' }}>
+        <div className="slide" style={{ height: '100%' }} ref={eduSectionRef}>
           <Edu />
         </div>
         <div className="slide" style={{ height: '100%' }} ref={workSectionRef}>
