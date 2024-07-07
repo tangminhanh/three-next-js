@@ -1,11 +1,20 @@
-import React, { useRef } from 'react';
+import React, { createContext, useContext, useRef } from 'react';
 import Home from './about-me/page';
 import Edu from './about-me/edu/page';
 import Work from './about-me/work/page';
 import Community from './about-me/community/page';
 
+const ScrollContext = createContext();
+
+export const useScrollContext = () => {
+  return useContext(ScrollContext);
+};
+
 const SwipeContainer = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
+  const workSectionRef = useRef(null);
+  const eduSectionRef = useRef(null);
+  const homeSectionRef = useRef(null);
 
   const handleScroll = () => {
     if (!containerRef.current) return;
@@ -22,26 +31,40 @@ const SwipeContainer = () => {
     }
   };
 
+  const scrollToWorkSection = () => {
+    if (workSectionRef.current) {
+      workSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+const scrollToEduSection = () => {
+    if (workSectionRef.current) {
+      workSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div
-      ref={containerRef}
-      className="swipe-container"
-      style={{ overflowY: 'scroll', height: '100vh' }}
-      onScroll={handleScroll}
-    >
-      <div className="slide" style={{ height: '100%' }}>
-        <Home />
+    <ScrollContext.Provider value={{ scrollToWorkSection }}>
+      <div
+        ref={containerRef}
+        className="swipe-container"
+        style={{ overflowY: 'scroll', height: '100vh' }}
+        onScroll={handleScroll}
+      >
+        <div className="slide" style={{ height: '100%' }}>
+          <Home />
+        </div>
+        <div className="slide" style={{ height: '100%' }}>
+          <Edu />
+        </div>
+        <div className="slide" style={{ height: '100%' }} ref={workSectionRef}>
+          <Work />
+        </div>
+        <div className="slide" style={{ height: '100%' }}>
+          <Community />
+        </div>
       </div>
-      <div className="slide" style={{ height: '100%' }}>
-        <Edu />
-      </div>
-      <div className="slide" style={{ height: '100%' }}>
-        <Work />
-      </div>
-      <div className="slide" style={{ height: '100%' }}>
-        <Community />
-      </div>
-    </div>
+    </ScrollContext.Provider>
   );
 };
 

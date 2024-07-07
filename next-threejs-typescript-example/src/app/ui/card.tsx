@@ -5,6 +5,7 @@ import {
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import Image from "next/image";
+import { useScrollContext } from '../SwipeContainers'; // Adjust the import path as needed
 
 const iconMap = {
   collected: BanknotesIcon,
@@ -14,11 +15,15 @@ const iconMap = {
 };
 
 export function CardAboutMe() {
+  const { scrollToWorkSection } = useScrollContext();
+
   return (
     <>
       <a href="/gf"><Card title="Experience" value="1 YEAR" type="pending" /></a>
       <Card title="Completed" value="10+ PROJECTS" type="invoices" />
-      <a href="/about-me/work"><Card title="Worked in" value="4+ COMPANIES" type="customers" /></a>
+      <div onClick={scrollToWorkSection} style={{ cursor: 'pointer' }}>
+        <Card title="Worked in" value="4+ COMPANIES" type="customers" />
+      </div>
     </>
   );
 }

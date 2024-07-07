@@ -5,6 +5,7 @@ import TypingEffect from '../typing';
 import TogglePlay from "../video";
 // import { PageSkeleton } from "../ui/skeletons";
 import Hand from '../hand'; 
+import { useScrollContext } from "../SwipeContainers";
 export default function Home() {
  
 
