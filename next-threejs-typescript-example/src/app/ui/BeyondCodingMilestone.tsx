@@ -19,7 +19,7 @@ const BeyondCodingPage: React.FC = () => {
       <div className={styles.staticContent}>
         {/* Left static content */}
         <h1>Beyond Coding</h1>
-        <p>This is static content on the left side.</p>
+        <p>Static content on the left side.</p>
       </div>
       {/* <div className={styles.divider}></div> */}
       <div className={styles.timeline}>

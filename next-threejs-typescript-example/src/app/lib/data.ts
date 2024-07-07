@@ -60,12 +60,12 @@ export const companies: Company[] = [
 export const TimelineData: TimelineSection[] = [
   {
     title: '.    C O D I N G  .',
-    items: ['Workshop CV', 'Workshop Database', 'AWS Collaboration'],
+    items: ['Computer Vision', 'Design Database', 'AWS Collaboration'],
     img: ['hehe', 'hihi','hoho']
   },
   {
     title: '.    C O M M U N I T Y  .',
-    items: ['Maincom Community', 'GL Viet Camp', 'Programmer Chief Enitio Camp'],
+    items: ['MLDA Maincommitee', 'GL FOC-VNNTU', 'Chief Prog Enitio Camp'],
     img: ['hehe', 'hihi','hoho']
 
   },
@@ -78,11 +78,11 @@ export const TimelineData: TimelineSection[] = [
   {
     title: 'C O N T I N U E  S T U D Y  .',
     items: [
-      'AWS Certification',
-      'Google Business Certification',
-      'Database Specialization Certification',
-      'Machine Learning for Data Science Certification',
-      'Web Development Certification',
+      'AWS Cloud',
+      'Google Business Intelligence',
+      'Database Specialization',
+      'Machine Learning',
+      'Web Development',
     ],
     img: ['hehe', 'hihi','hoho']
 
