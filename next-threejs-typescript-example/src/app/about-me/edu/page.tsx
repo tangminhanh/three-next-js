@@ -28,10 +28,10 @@ const videoRef = useRef<HTMLVideoElement>(null);
   }, []);
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center ">
         <div className="flex flex-col items-center">
-        <h1 className="custom-font mb-2 text-xl md:text-2xl">About Me</h1>
-        <div className="relative mb-4">
+        <h1 className="custom-font text-xl md:text-2xl">About Me</h1>
+        <div className="relative mb-2">
           <video
             ref={videoRef}
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent"
@@ -51,7 +51,7 @@ const videoRef = useRef<HTMLVideoElement>(null);
             </button>
           )}
         </div>
-        <h2 className="text-2xl font-semibold">Final Year Student @NTU, Singapore</h2>
+        <h2 className="text-2xl font-semibold mb-4">Final Year Student @NTU, Singapore</h2>
       
       <div className="grid gap-3 sm:grid-cols-2 pt-4 lg:grid-cols-3">
         <CardAboutMe />
@@ -59,8 +59,8 @@ const videoRef = useRef<HTMLVideoElement>(null);
       </div>
       
       <div className="mx-auto max-w-2xl px-6 lg:px-8">
-            <h3 className="text-center text-sm pt-4 font-semibold leading-8 text-gray-500 uppercase">Works with different technologies</h3>
-            <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-7">
+            <h3 className="text-center text-sm font-semibold leading-8 text-gray-500 uppercase">Works with different technologies</h3>
+            <div className="mx-auto mt-4 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-7">
           <img
             className="max-h-12 w-full object-contain col-span-1"
             src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682840456/image_2_misfnu.png"

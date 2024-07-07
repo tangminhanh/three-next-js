@@ -1,79 +1,91 @@
-import React, { createContext, useContext, useRef } from 'react';
+import React, { useRef } from 'react';
 import Home from './about-me/page';
 import Edu from './about-me/edu/page';
 import Work from './about-me/work/page';
 import Community from './about-me/community/page';
 
-interface ScrollContextType {
-  scrollToWorkSection: () => void;
+interface SwipeContainerProps {
+  setScrollToSection: React.Dispatch<React.SetStateAction<(section: string) => void>>;
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
-
-export const useScrollContext = () => {
-  const context = useContext(ScrollContext);
-  if (!context) {
-    throw new Error('useScrollContext must be used within a ScrollProvider');
-  }
-  return context;
-};
-
-
-const SwipeContainer = () => {
+const SwipeContainer: React.FC<SwipeContainerProps> = ({ setScrollToSection, setActiveSection }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const workSectionRef = useRef<HTMLDivElement>(null);
-  const eduSectionRef = useRef<HTMLDivElement>(null);
-  const homeSectionRef = useRef<HTMLDivElement>(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const eduRef = useRef<HTMLDivElement>(null);
+  const workRef = useRef<HTMLDivElement>(null);
+  const communityRef = useRef<HTMLDivElement>(null);
 
+  const scrollToSection = (section: string) => {
+    if (!containerRef.current) return;
+
+    let targetRef: React.RefObject<HTMLDivElement> | null = null;
+
+    switch (section) {
+      case 'home':
+        targetRef = homeRef;
+        break;
+      case 'edu':
+        targetRef = eduRef;
+        break;
+      case 'work':
+        targetRef = workRef;
+        break;
+      case 'community':
+        targetRef = communityRef;
+        break;
+      default:
+        return;
+    }
+
+    if (targetRef && targetRef.current) {
+      containerRef.current.scrollTo({
+        top: targetRef.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  // Update active section based on scroll position
   const handleScroll = () => {
     if (!containerRef.current) return;
 
-    const { scrollTop, clientHeight } = containerRef.current;
-    const scrollThreshold = clientHeight / 2; // Adjust this threshold as needed
+    const scrollTop = containerRef.current.scrollTop;
+    const sectionRefs = [homeRef, eduRef, workRef, communityRef];
+    const sectionNames = ['home', 'edu', 'work', 'community'];
 
-    if (scrollTop < scrollThreshold) {
-      console.log('Scroll Up');
-      // Handle scrolling up
-    } else if (scrollTop > scrollThreshold) {
-      console.log('Scroll Down');
-      // Handle scrolling down
+    for (let i = 0; i < sectionRefs.length; i++) {
+      const ref = sectionRefs[i];
+      if (ref.current && ref.current.offsetTop <= scrollTop + window.innerHeight / 2) {
+        setActiveSection(sectionNames[i]);
+      }
     }
   };
 
-    const scrollToWorkSection = () => {
-    if (workSectionRef.current) {
-      workSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-    const scrollToEduSection = () => {
-        if (eduSectionRef.current) {
-        eduSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  React.useEffect(() => {
+    setScrollToSection(() => scrollToSection);
+  }, [setScrollToSection]);
 
   return (
-    <ScrollContext.Provider value={{ scrollToWorkSection }}>
-      <div
-        ref={containerRef}
-        className="swipe-container"
-        style={{ overflowY: 'scroll', height: '100vh' }}
-        onScroll={handleScroll}
-      >
-        <div className="slide" style={{ height: '100%' }}>
-          <Home />
-        </div>
-        <div className="slide" style={{ height: '100%' }} ref={eduSectionRef}>
-          <Edu />
-        </div>
-        <div className="slide" style={{ height: '100%' }} ref={workSectionRef}>
-          <Work />
-        </div>
-        <div className="slide" style={{ height: '100%' }}>
-          <Community />
-        </div>
+    <div
+      ref={containerRef}
+      className="swipe-container"
+      style={{ overflowY: 'scroll', height: '100vh' }}
+      onScroll={handleScroll}
+    >
+      <div className="slide" style={{ height: '100%' }} ref={homeRef}>
+        <Home />
       </div>
-    </ScrollContext.Provider>
+      <div className="slide" style={{ height: '100%' }} ref={eduRef}>
+        <Edu />
+      </div>
+      <div className="slide" style={{ height: '100%' }} ref={workRef}>
+        <Work />
+      </div>
+      <div className="slide" style={{ height: '100%' }} ref={communityRef}>
+        <Community />
+      </div>
+    </div>
   );
 };
 

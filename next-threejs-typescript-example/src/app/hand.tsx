@@ -16,22 +16,20 @@ const Hand: React.FC = () => {
     }, []);
 
     return (
-        <div ref={handImageRef} className={`${styles.handImage} ${styles.hidden}`} id="hand-image">
-          <a href="/about-me/edu" className="group px-5 py-4 transition-colors">
-            <h2 className={`mb-3 text-l font-semibold ${styles.jump}`}>
-              Swipe to know About Me
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                <Image
-                  src="/hand.png"
-                  alt="hand Logo"
-                  className="dark:invert"
-                  width={60}
-                  height={12}
-                  priority
-                />
-              </span>
-            </h2>
-          </a>
+        <div ref={handImageRef} className={`${styles.handImage} ${styles.hidden} pt-5`} id="hand-image">
+          <div className="group px-5 py-4 transition-colors flex flex-col items-center">
+          <div className={`mb-3 text-l font-semibold ${styles.jump} group-hover:translate-x-1 motion-reduce:transform-none flex items-center`}>
+            <h2 className="mr-2">Swipe to know About Me</h2>
+            <Image
+              src="/hand.png"
+              alt="hand Logo"
+              className="dark:invert"
+              width={60}
+              height={12}
+              priority
+            />
+          </div>
+        </div>
         </div>
     );
 }

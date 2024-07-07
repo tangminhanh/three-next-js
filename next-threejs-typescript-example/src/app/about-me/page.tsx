@@ -5,7 +5,7 @@ import TypingEffect from '../typing';
 import TogglePlay from "../video";
 // import { PageSkeleton } from "../ui/skeletons";
 import Hand from '../hand'; 
-import { useScrollContext } from "../SwipeContainers";
+// import { useScrollContext } from "../SwipeContainers";
 export default function Home() {
  
 
@@ -45,35 +45,9 @@ export default function Home() {
 
   return (
     // <Suspense fallback={<PageSkeleton />}>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <TypingEffect />
-
-        {/* Placeholder for your content */}
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0" 
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          > View
-            My Resume{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-            <Image
-              src="/resume.png"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className="flex min-h-screen flex-col items-center p-20">
       <h1 className="custom-font mb-3 text-3xl px-4 font-semibold box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">MY ASPIRATION</h1>
-      <h1 className="custom-font mb-3 py-5 text-3xl font-semibold">Creator - Coding - Community</h1>
+      <h1 className="custom-font mb-3 text-3xl font-semibold">Creator - Coding - Community</h1>
       <div className="relative z-[-1] flex place-items-center before:absolute before:h-[1000px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[300px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-300 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[440px] before:lg:h-[460px]">
         {/* Video with hover effects */}
         <div className="relative px-5">
@@ -141,13 +115,11 @@ export default function Home() {
     <div className= " pt-5 grid text-center lg:mb-0 lg:w-full lg:text-center transition-colors">
             
              {/* <div className="max-w-3xl mx-auto target target-show"> */}
-              <p className="mt-6 text-center max-w-3xl mx-auto leading-8 text-gray-400">Crafting beautiful and functional web applications is my passion. As a full-stack developer, I bring together my skills in front-end and back-end development to create seamless user experiences.</p>
+              <p className=" text-center max-w-3xl mx-auto leading-8 text-gray-400">Crafting beautiful and functional web applications is my passion. As a full-stack developer, I bring together my skills in front-end and back-end development to create seamless user experiences.</p>
               {/* </div> */}
               <Hand/>
     </div>
           
-      
-
    
 
     </main>

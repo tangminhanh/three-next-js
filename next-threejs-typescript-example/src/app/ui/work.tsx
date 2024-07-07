@@ -17,7 +17,7 @@ const WorkExperience: React.FC = () => {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center">
       <div className="w-full flex flex-col items-center">
         <h1 className="custom-font mb-2 text-xl md:text-2xl">Work Experience</h1>
         <div className="flex space-x-8 py-4 ">

@@ -59,7 +59,7 @@ export const companies: Company[] = [
 
 export const TimelineData: TimelineSection[] = [
   {
-    title: '.    C O D I N G  .',
+    title: '.    T R A I N I N G  .',
     items: ['Computer Vision', 'Design Database', 'AWS Collaboration'],
     img: ['hehe', 'hihi','hoho']
   },
@@ -70,7 +70,7 @@ export const TimelineData: TimelineSection[] = [
 
   },
   {
-    title: '.  C R E A T O R  .',
+    title: '.  C R E A T I V E .',
     items: ['Vlog', 'TikTok', 'Blog'],
     img: ['hehe', 'hihi','hoho']
 
