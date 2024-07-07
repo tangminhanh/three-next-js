@@ -34,9 +34,9 @@ export default function Page() {
   }, []);
 
   return (
-   <main className="flex min-h-screen flex-col items-center justify-between">
-  <div className="container  p-4">
-    <div className="z-10 w-full max-w-5xl flex items-center justify-between font-mono text-sm">
+   <main className="flex min-h-screen flex-col items-center justify-between w-full">
+  <div className="container items-center p-4">
+    <div id="navbar" className="static z-10 w-full max-w-5xl flex items-center justify-between font-mono text-sm">
       <TypingEffect />
       <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
       <div className="flex items-center">
