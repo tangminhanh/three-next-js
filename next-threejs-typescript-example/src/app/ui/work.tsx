@@ -18,7 +18,7 @@ const WorkExperience: React.FC = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center w-full">
-      <div className="w-full p-4 flex flex-col items-center">
+      <div className="w-full flex flex-col px-3 items-center">
         <h1 className="custom-font mb-2 text-xl md:text-2xl">Work Experience</h1>
         <div className="flex space-x-8 py-4">
   {companies.map((company, index) => (
@@ -43,7 +43,7 @@ const WorkExperience: React.FC = () => {
   ))}
 </div>
         {selectedCompanyIndex !== null && (
-          <div className="flex w-full mt-10 flex-wrap">
+          <div className="flex w-full mt-5 flex-wrap">
             <div className="flex w-full mb-10">
                <div className="w-full md:w-1/2 pr-4">
                 <div className="relative rounded-xl mr-auto md:mr-0 md:ml-auto shadow-xl flex bg-slate-800 h-[20rem] sm:max-h-[none] sm:rounded-xl lg:h-[25rem] xl:h-auto xl:max-h-[25rem] dark:bg-primary/70 dark:backdrop-blur dark:ring-1 dark:ring-inset dark:ring-white/10 col-start-6 col-end-10 target target-show">
@@ -78,7 +78,7 @@ const WorkExperience: React.FC = () => {
                           <img
                             src={companies[selectedCompanyIndex].proj_img[selectedImageIndices[selectedCompanyIndex]]}
                             alt=""
-                            className="max-w-full max-h-full object-center"
+                            className="max-w-full max-h-full flex-auto object-center"
                           />
                         )}
                       </div>
