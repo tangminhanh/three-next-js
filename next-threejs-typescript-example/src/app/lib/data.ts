@@ -83,6 +83,7 @@ export const TimelineData: TimelineSection[] = [
       'Database Specialization',
       'Machine Learning',
       'Web Development',
+      'UI/UX Design'
     ],
     img: ['hehe', 'hihi','hoho']
 

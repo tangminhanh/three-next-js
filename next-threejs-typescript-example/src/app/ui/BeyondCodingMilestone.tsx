@@ -25,7 +25,7 @@ const BeyondCodingPage: React.FC = () => {
       <div className={styles.timeline}>
         {/* Right scrollable timeline */}
         {TimelineData.map((section, index) => (
-          <div key={index} className={`grid grid-cols-3 ${styles.timelineSection}`}>
+          <div key={index} className={`grid grid-cols-3 sm:grid-cols-5 ${styles.timelineSection}`}>
             <h2 className={`text-xl ${styles.timelineTitle}`}>{section.title}</h2>
             <div className={`grid grid-cols-3 ${styles.cardContainer}`}>
               {section.items.map((item, idx) => {

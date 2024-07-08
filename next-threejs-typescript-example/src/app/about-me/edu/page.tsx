@@ -63,7 +63,7 @@ const [viewportHeight, setViewportHeight] = useState(0);
       
         <CardAboutMe />
         {viewportHeight > 600 && (
-      <div className="mx-auto max-w-[30em] mt-[0.25em] px-[1.5em] sm:max-w-[30em] lg:px-[1em]">
+      <div className="mx-auto max-w-[30em] mt-[0.25em] px-[1.5em] sm:max-w-[30em] md:max-w-[34em] md:px-[2em] lg:px-[1em] sm:py-[1em] md:py-[0.5em]">
             <h3 className="text-center text-[0.5em] md:text-[0.75em] font-semibold text-gray-500 uppercase">Works with different technologies</h3>
              <div className="mx-auto mt-[1em] grid max-w-[20em] items-center gap-x-[1em] gap-y-[1em] sm:max-w-[24em] sm:gap-x-[1.5em] lg:mx-0 lg:max-w-none sm:grid-cols-8 grid-cols-4 sm:justify-center">
 
