@@ -56,8 +56,6 @@ export default function Home() {
             ref={videoRef}
             className=" w-full max-w-md relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent"
             src="/il.mp4"
-            // width={336}
-            // height={252}
             autoPlay
             muted
             loop
