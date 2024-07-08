@@ -6,7 +6,7 @@ import Loading from '../loading'
 export default function Edu() {
 const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
+const [viewportHeight, setViewportHeight] = useState(0);
   const togglePlay = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -25,16 +25,26 @@ const videoRef = useRef<HTMLVideoElement>(null);
       videoRef.current.play();
       setIsPlaying(true);
     }
+  function handleResize() {
+      setViewportHeight(window.innerHeight);
+    }
+    handleResize(); // Initial call
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
+
+  
   
   return (
-    <main className="flex min-h-screen flex-col items-center p-[0.125em] md:p-[0.25em] overflow-hidden ">
-        <div className="flex flex-col items-center">
+    <main className="flex flex-wrap min-h-screen flex-col items-center overflow-hidden ">
+        <div className="flex flex-wrap flex-col items-center">
         <h1 className="custom-font text-[1em] md:text-[1.5em]">About Me</h1>
         <div className="relative mb-[0.5em]">
           <video
             ref={videoRef}
-            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent w-full max-w-[6em] md:max-w-[8em]"
+            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] rounded-lg border-transparent w-full max-w-[6em] md:max-w-[10em]"
             src="/Artist inside.mp4"
             autoPlay
             muted
@@ -51,14 +61,12 @@ const videoRef = useRef<HTMLVideoElement>(null);
         </div>
         <h2 className="text-[0.5em] md:text-[1.25em] font-semibold mb-[0.25em]">Final Year Student @NTU, Singapore</h2>
       
-      <div className="grid gap-[1em] sm:grid-cols-2  lg:grid-cols-3">
         <CardAboutMe />
-      </div>
-      </div>
-      
-      <div className="mx-auto max-w-[30em] px-[1.5em] lg:px-[1em] pt-[1em]">
+        {viewportHeight > 600 && (
+      <div className="mx-auto max-w-[30em] mt-[0.25em] px-[1.5em] sm:max-w-[30em] lg:px-[1em]">
             <h3 className="text-center text-[0.5em] md:text-[0.75em] font-semibold text-gray-500 uppercase">Works with different technologies</h3>
-             <div className="mx-auto mt-[1em] grid max-w-[20em] grid-cols-4 items-center gap-x-[1em] gap-y-[1em] sm:max-w-[24em] sm:grid-cols-6 sm:gap-x-[1.5em] lg:mx-0 lg:max-w-none lg:grid-cols-7">
+             <div className="mx-auto mt-[1em] grid max-w-[20em] items-center gap-x-[1em] gap-y-[1em] sm:max-w-[24em] sm:gap-x-[1.5em] lg:mx-0 lg:max-w-none sm:grid-cols-8 grid-cols-4 sm:justify-center">
+
           <img
             className="max-h-[3em] w-full object-contain col-span-1"
             src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682840456/image_2_misfnu.png"
@@ -94,8 +102,14 @@ const videoRef = useRef<HTMLVideoElement>(null);
             src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682840617/image_3_nrk8jx.png"
             alt="VueJs"
           />
+          <Image
+            className="max-h-[3em] w-full object-contain col-span-1"
+            src="/docker.jpeg"
+            alt="AWS"
+            width="158" height="48"
+          />
         </div>
-        <div className="mx-auto mt-[2em] grid max-w-[20em] grid-cols-4 items-center gap-x-[1em] gap-y-[1em] sm:max-w-[24em] sm:grid-cols-6 sm:gap-x-[1.5em] lg:mx-0 lg:max-w-none lg:grid-cols-8">
+        <div className="mx-auto mt-[2em] grid max-w-[20em] grid-cols-4 items-center gap-x-[1em] gap-y-[1em] sm:max-w-[24em]  sm:gap-x-[1.5em] lg:mx-0 lg:max-w-none sm:grid-cols-8">
           <img
             className="max-h-[3em] w-full object-contain col-span-1"
             src="https://res.cloudinary.com/dho2pmur7/image/upload/c_scale,w_300/v1682841142/image_4_vyfc0e.png"
@@ -138,8 +152,9 @@ const videoRef = useRef<HTMLVideoElement>(null);
             alt="Ubuntu"
           />
         </div>
+      </div>)}
       </div>
-
+      
     </main>
   );
 }
