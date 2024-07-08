@@ -9,7 +9,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => {
   const [darkMode, setDarkMode] = useState(false);
-
+  
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add('dark-mode');
@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => {
       </nav>
       <div className="toggle-switch">
       <label className="switch-label">
-        <input type="checkbox" class="checkbox" />
+        <input type="checkbox" className="checkbox" />
         <span className="slider"></span>
       </label>
     </div>
