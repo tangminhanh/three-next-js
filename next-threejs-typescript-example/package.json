@@ -10,24 +10,27 @@
     "vercel-build": "next build"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@splinetool/react-spline": "^4.0.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@vercel/postgres": "^0.9.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.13",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
     "react-swipeable": "^7.0.1",
+    "tailwind-merge": "^2.4.0",
     "three": "^0.165.0",
-    "typed.js": "^2.1.0",
-    "@tailwindcss/forms": "^0.5.7",
-    "@heroicons/react": "^2.0.18",
-    "@vercel/postgres": "^0.9.0"
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vercel/style-guide": "^5.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "@vercel/style-guide": "^5.0.1"
+    "typescript": "^5"
   }
 }

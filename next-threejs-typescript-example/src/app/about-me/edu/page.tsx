@@ -103,7 +103,7 @@ const [viewportHeight, setViewportHeight] = useState(0);
             alt="VueJs"
           />
           <Image
-            className="max-h-[3em] w-full object-contain col-span-1"
+            className="max-h-[3em] w-full object-contain col-span-1 dark:invert"
             src="/docker.jpeg"
             alt="AWS"
             width="158" height="48"

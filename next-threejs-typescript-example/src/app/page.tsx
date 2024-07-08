@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image'
 import Navbar from './ui/navbar';
 import SwipeContainer from './SwipeContainers';
 import { useState, useEffect } from 'react';
@@ -14,53 +13,10 @@ export default function Page() {
     scrollToSection(section);
   };
 
-  useEffect(() => {
-    const scrollFunction = () => {
-      const navbar = document.getElementById('navbar');
-      if (navbar) {
-        if (window.scrollY > 10) {
-          navbar.style.top = '0';
-        } else {
-          navbar.style.top = '-50px';
-        }
-      }
-    };
-
-    window.addEventListener('scroll', scrollFunction);
-
-    return () => {
-      window.removeEventListener('scroll', scrollFunction);
-    };
-  }, []);
-
   return (
    <main className="flex min-h-screen flex-col items-center justify-between w-full">
   <div className="container items-center p-4">
-    <div id="navbar" className="static z-10 w-full max-w-5xl flex items-center justify-between font-mono text-sm">
-      <TypingEffect />
       <Navbar onNavigate={handleNavigate} activeSection={activeSection} />
-      <div className="flex items-center">
-        <a
-          className="flex place-items-center gap-2"
-          href="/hehe"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My Resume{" "}
-          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-            -&gt;
-          </span>
-          <Image
-            src="/resume.png"
-            alt="Resume Logo"
-            className="dark:invert"
-            width={100}
-            height={24}
-            priority
-          />
-        </a>
-      </div>
-    </div>
     <SwipeContainer setScrollToSection={setScrollToSection} setActiveSection={setActiveSection} />
   </div>
 </main>
