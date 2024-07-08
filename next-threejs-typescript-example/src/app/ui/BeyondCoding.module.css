@@ -1,5 +1,5 @@
 /* BeyondCoding.module.css */
-.container {
+.containerr {
   padding-top:50px;
   display: flex;
   overflow: hidden;
@@ -38,8 +38,8 @@
 .timelineTitle {
    writing-mode: vertical-rl;
   text-orientation: upright;
-  padding-right: 10px;
-  margin-right: 30px; /* Increase the margin-right to push the cards to the right */
+  /* /* padding-right: 10px; */
+  margin-right: 30px;  
   border-right: 2px solid black;
   height: 100%;
     background: linear-gradient(to bottom, #ec4899, #a855f7, #6366f1);
@@ -52,18 +52,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   transition: transform 0.5s ease;
   align-items:center;
-  padding-left:150px;
+  padding-left:10px;
 }
 
 
 
 .cardContainer .glass {
   position: relative;
-  width: 280px;
-  height: 300px;
+  width: 240px;
+  height: 280px;
   background: linear-gradient(#fff2, transparent);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
